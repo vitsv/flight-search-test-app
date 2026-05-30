@@ -1,0 +1,64 @@
+[
+  {
+    "code": "LHR",
+    "name": "London Heathrow",
+    "destinations": [
+      { "code": "CDG", "name": "Paris Charles de Gaulle" },
+      { "code": "JFK", "name": "New York JFK" },
+      { "code": "DXB", "name": "Dubai International" },
+      { "code": "SIN", "name": "Singapore Changi" },
+      { "code": "FRA", "name": "Frankfurt Airport" }
+    ]
+  },
+  {
+    "code": "CDG",
+    "name": "Paris Charles de Gaulle",
+    "destinations": [
+      { "code": "LHR", "name": "London Heathrow" },
+      { "code": "BCN", "name": "Barcelona El Prat" },
+      { "code": "JFK", "name": "New York JFK" },
+      { "code": "MAD", "name": "Madrid Barajas" }
+    ]
+  },
+  {
+    "code": "JFK",
+    "name": "New York JFK",
+    "destinations": [
+      { "code": "LHR", "name": "London Heathrow" },
+      { "code": "LAX", "name": "Los Angeles International" },
+      { "code": "ORD", "name": "Chicago O'Hare" },
+      { "code": "MIA", "name": "Miami International" },
+      { "code": "CDG", "name": "Paris Charles de Gaulle" }
+    ]
+  },
+  {
+    "code": "DXB",
+    "name": "Dubai International",
+    "destinations": [
+      { "code": "LHR", "name": "London Heathrow" },
+      { "code": "BOM", "name": "Mumbai Chhatrapati Shivaji" },
+      { "code": "SIN", "name": "Singapore Changi" },
+      { "code": "BKK", "name": "Bangkok Suvarnabhumi" }
+    ]
+  },
+  {
+    "code": "SIN",
+    "name": "Singapore Changi",
+    "destinations": [
+      { "code": "DXB", "name": "Dubai International" },
+      { "code": "NRT", "name": "Tokyo Narita" },
+      { "code": "SYD", "name": "Sydney Kingsford Smith" },
+      { "code": "BKK", "name": "Bangkok Suvarnabhumi" }
+    ]
+  },
+  {
+    "code": "FRA",
+    "name": "Frankfurt Airport",
+    "destinations": [
+      { "code": "LHR", "name": "London Heathrow" },
+      { "code": "CDG", "name": "Paris Charles de Gaulle" },
+      { "code": "IST", "name": "Istanbul Airport" },
+      { "code": "JFK", "name": "New York JFK" }
+    ]
+  }
+]

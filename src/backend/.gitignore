@@ -3,6 +3,9 @@
 ##
 ## Get latest from `dotnet new gitignore`
 
+# Serilog rolling log files
+logs/
+
 # dotenv files
 .env
 

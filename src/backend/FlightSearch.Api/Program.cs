@@ -1,6 +1,14 @@
+using FlightSearch.Api.Data;
+using FlightSearch.Api.Middleware;
+using Serilog;
+
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Host.UseSerilog((ctx, config) =>
+    config.ReadFrom.Configuration(ctx.Configuration));
+
 builder.Services.AddControllers();
+builder.Services.AddSingleton<AirportRepository>();
 
 const string corsPolicy = "AllowFrontend";
 builder.Services.AddCors(options =>
@@ -13,6 +21,7 @@ builder.Services.AddCors(options =>
 
 var app = builder.Build();
 
+app.UseMiddleware<RequestLoggingMiddleware>();
 app.UseCors(corsPolicy);
 app.UseHttpsRedirection();
 app.MapControllers();
