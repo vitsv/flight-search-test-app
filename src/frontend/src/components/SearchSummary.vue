@@ -11,15 +11,37 @@
           <v-list-item-title>Trip type</v-list-item-title>
           <v-list-item-subtitle>{{ tripTypeLabel }}</v-list-item-subtitle>
         </v-list-item>
+
         <v-list-item>
           <template #prepend><v-icon icon="mdi-airplane-takeoff" /></template>
           <v-list-item-title>From</v-list-item-title>
           <v-list-item-subtitle>{{ result.origin?.label }}</v-list-item-subtitle>
         </v-list-item>
+
         <v-list-item>
           <template #prepend><v-icon icon="mdi-airplane-landing" /></template>
           <v-list-item-title>To</v-list-item-title>
           <v-list-item-subtitle>{{ result.destination?.label }}</v-list-item-subtitle>
+        </v-list-item>
+
+        <v-list-item v-if="result.departureDate">
+          <template #prepend><v-icon icon="mdi-calendar" /></template>
+          <v-list-item-title>Departure</v-list-item-title>
+          <v-list-item-subtitle>{{ formatDate(result.departureDate) }}</v-list-item-subtitle>
+        </v-list-item>
+
+        <v-list-item v-if="result.returnDate">
+          <template #prepend><v-icon icon="mdi-calendar-arrow-right" /></template>
+          <v-list-item-title>Return</v-list-item-title>
+          <v-list-item-subtitle>{{ formatDate(result.returnDate) }}</v-list-item-subtitle>
+        </v-list-item>
+
+        <v-list-item>
+          <template #prepend><v-icon icon="mdi-account-group" /></template>
+          <v-list-item-title>Passengers</v-list-item-title>
+          <v-list-item-subtitle>
+            {{ result.passengers }} {{ result.passengers === 1 ? 'passenger' : 'passengers' }}
+          </v-list-item-subtitle>
         </v-list-item>
       </v-list>
     </v-card-text>
@@ -36,4 +58,12 @@ const props = defineProps({
 const tripTypeLabel = computed(() =>
   props.result.tripType === 'return' ? 'Return' : 'One-way'
 )
+
+function formatDate(date) {
+  return new Date(date).toLocaleDateString('en-GB', {
+    day: 'numeric',
+    month: 'short',
+    year: 'numeric',
+  })
+}
 </script>
