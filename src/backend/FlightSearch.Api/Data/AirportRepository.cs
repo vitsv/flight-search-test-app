@@ -3,7 +3,7 @@ using FlightSearch.Api.Models;
 
 namespace FlightSearch.Api.Data;
 
-public class AirportRepository
+public class AirportRepository : IAirportRepository
 {
     private record AirportEntry(string Code, string Name, List<Airport> Destinations);
 

@@ -6,7 +6,7 @@ namespace FlightSearch.Api.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
-public class AirportsController(AirportRepository repository, ILogger<AirportsController> logger) : ControllerBase
+public class AirportsController(IAirportRepository repository, ILogger<AirportsController> logger) : ControllerBase
 {
     [HttpGet]
     public ActionResult<IReadOnlyList<Airport>> GetOrigins()

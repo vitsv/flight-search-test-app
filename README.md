@@ -1,6 +1,8 @@
 # Flight Search — Demo App
 
-A full-stack flight search prototype built as a coding interview exercise, with assistance from [Claude](https://claude.ai) (Anthropic AI).
+Hello! My name is **Witali Stinski**, this is a full-stack flight search prototype built as a coding interview exercise for **Coforge**, with assistance from [Claude](https://claude.ai) (Anthropic AI).
+
+See [INTERVIEW TASK](INTERVIEW_TASK.md) where requirements are described. I used iterative approach and split requirements into [USER STORIES](USER_STORIES.md) for clarity.
 
 - **Frontend**: Vue 3 + Vite + Vuetify 3
 - **Backend**: ASP.NET Core Web API (.NET 10)
@@ -140,6 +142,38 @@ GET /api/airports/destinations/{origin}
 ```json
 { "error": "Origin code must contain only letters and be at least 2 characters long." }
 ```
+
+## Testing
+
+### Backend (xUnit + Moq — 10 tests)
+
+```bash
+cd src/backend
+dotnet test
+```
+
+| Test class | Scenarios covered |
+|------------|-------------------|
+| `AirportsControllerTests` | `GetOrigins` returns 200; `GetDestinations` returns 200, 404 (unknown origin), 400 (empty / single-char / non-alphabetic code) |
+| `AirportRepositoryTests` | All origins returned ordered by name; valid lookup; case-insensitive lookup; unknown code returns null |
+
+### Frontend (Vitest + @vue/test-utils — 11 tests)
+
+```bash
+cd src/frontend
+npm test
+```
+
+To run in watch mode during development:
+
+```bash
+npm run test:watch
+```
+
+| Test file | Scenarios covered |
+|-----------|-------------------|
+| `SearchSummary.spec.js` | Trip type labels (One-way / Return); origin and destination display; departure date formatting; passenger singular / plural |
+| `FlightSearchForm.spec.js` | `fetchOrigins` called on mount; origins list populated; destinations fetched on origin change; destination and search result cleared on origin reset; search result values set correctly |
 
 ## Logging
 

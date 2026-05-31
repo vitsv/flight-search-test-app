@@ -1,0 +1,17 @@
+[
+  {
+    "code": "LHR",
+    "name": "London Heathrow",
+    "destinations": [
+      { "code": "CDG", "name": "Paris Charles de Gaulle" },
+      { "code": "JFK", "name": "New York JFK" }
+    ]
+  },
+  {
+    "code": "CDG",
+    "name": "Paris Charles de Gaulle",
+    "destinations": [
+      { "code": "LHR", "name": "London Heathrow" }
+    ]
+  }
+]

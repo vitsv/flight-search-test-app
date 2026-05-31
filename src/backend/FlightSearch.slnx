@@ -1,3 +1,4 @@
 <Solution>
+  <Project Path="FlightSearch.Api.Tests/FlightSearch.Api.Tests.csproj" />
   <Project Path="FlightSearch.Api/FlightSearch.Api.csproj" />
 </Solution>

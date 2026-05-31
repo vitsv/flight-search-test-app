@@ -231,6 +231,9 @@ async function onOriginChange(code) {
   }
 }
 
+// Exposed for unit tests
+defineExpose({ tripType, origin, destination, destinations, origins, searchResult, passengers, onOriginChange, onSearch })
+
 function onSearch() {
   const originObj = origins.value.find(a => a.code === origin.value)
   const destObj = destinations.value.find(a => a.code === destination.value)

@@ -8,7 +8,7 @@ builder.Host.UseSerilog((ctx, config) =>
     config.ReadFrom.Configuration(ctx.Configuration));
 
 builder.Services.AddControllers();
-builder.Services.AddSingleton<AirportRepository>();
+builder.Services.AddSingleton<IAirportRepository, AirportRepository>();
 
 const string corsPolicy = "AllowFrontend";
 builder.Services.AddCors(options =>
