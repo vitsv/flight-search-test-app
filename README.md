@@ -1,11 +1,15 @@
 # Flight Search — Demo App
 
-Hello! My name is **Witali Stinski**, this is a full-stack flight search prototype built as a coding interview exercise for **Coforge**, with assistance from [Claude](https://claude.ai) (Anthropic AI).
+Hello! My name is **Witali Stinski**,
+
+this is a full-stack Flight Search prototype built as a coding interview exercise for **Coforge**, with assistance from [Claude](https://claude.ai) (Anthropic AI).
 
 See [INTERVIEW TASK](INTERVIEW_TASK.md) where requirements are described. I used iterative approach and split requirements into [USER STORIES](USER_STORIES.md) for clarity.
 
 - **Frontend**: Vue 3 + Vite + Vuetify 3
 - **Backend**: ASP.NET Core Web API (.NET 10)
+
+![Flight Search App](docs/screenshot.png)
 
 ## Repository Structure
 
